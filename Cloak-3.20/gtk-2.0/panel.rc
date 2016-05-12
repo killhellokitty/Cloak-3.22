@@ -1,0 +1,230 @@
+style "theme-panel"
+{
+	xthickness = 4 # The spacing (padding) inside and between applets. Add a lower value for a more compact look.
+	ythickness = 0
+
+# Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
+	bg_pixmap[NORMAL] = "/assets/panel-bgx30.png"
+
+  bg[NORMAL]      = @bg_color
+  bg[PRELIGHT]    = @bg_color
+  bg[SELECTED]    = @selected_bg_color
+  bg[INSENSITIVE] = mix (0.6, @bg_color, @base_color)
+  bg[ACTIVE]      = @bg_color
+
+  fg[NORMAL]      = @fg_color
+  fg[PRELIGHT]    = @fg_color
+  fg[SELECTED]    = @selected_fg_color
+  fg[INSENSITIVE] = mix (0.5, @fg_color, @bg_color)
+  fg[ACTIVE]      = @fg_color
+
+  text[NORMAL]      = @text_color
+  text[PRELIGHT]    = @text_color
+  text[SELECTED]    = @selected_fg_color
+  text[INSENSITIVE] = darker (@bg_color)
+  text[ACTIVE]      = @selected_fg_color
+
+  base[NORMAL]      = @base_color
+  base[PRELIGHT]    = shade (0.95, @bg_color)
+  base[SELECTED]    = @selected_bg_color
+  base[INSENSITIVE] = mix (0.5, @fg_color, @bg_color)
+  base[ACTIVE]      = @selected_bg_color
+ 	
+	
+}
+
+widget "*XfceSystray*GtkFrame*"  style "GtkFrame-Xfce-Plugin"
+
+
+style "theme-panel-buttons"
+{
+# Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
+	#bg_pixmap[NORMAL] = "/assets/panel-bg.png"
+	
+	engine "pixmap" {
+		image {
+			function	= BOX
+			recolorable	= TRUE
+			state		= NORMAL
+		}
+		image {
+			function	= BOX
+			recolorable	= TRUE
+			state		= PRELIGHT
+			file		= "/assets/panel-button-hover.png"
+			border		= { 4, 4, 1, 1 }
+			stretch		= TRUE
+		}
+		image {
+			function	= BOX
+			recolorable	= TRUE
+			state		= ACTIVE
+			file		= "/assets/panel-button-active.png"
+			border		= { 4, 4, 1, 1 }
+			stretch		= TRUE
+		}
+		image {
+			function	= BOX
+			recolorable	= TRUE
+			state		= SELECTED
+			file		= "/assets/panel-button-active.png"
+			border		= { 4, 4, 1, 1 }
+			stretch		= TRUE
+		}
+		image {
+			function	= BOX
+			recolorable	= TRUE
+			state		= INSENSITIVE
+		}
+		image {
+			function	= ARROW
+			recolorable	= TRUE
+			arrow_direction	= DOWN
+		}
+	}
+}
+
+style "theme-applet"
+{
+  fg[NORMAL] = "#ffffff"
+  bg[NORMAL] = @base_color
+}
+
+style "theme-panel-light"
+{
+	xthickness = 1
+	ythickness = 0
+
+	fg[NORMAL] = @fg_color
+
+	engine "murrine" {
+		textstyle = 0
+		roundness = 0
+	}
+}
+
+# disable for syncronize menu selected fonts
+#style "theme-panel-text"
+#{
+#	fg[NORMAL]	= "#000000"
+#	fg[PRELIGHT]	= "#000000"
+#	fg[ACTIVE]	= "#ffffff"
+#	text[NORMAL]	= "#000000"
+#	text[PRELIGHT]	= "#000000"
+#	text[ACTIVE]	= "#ffffff"
+#}
+
+style "theme-main-menu-text" 
+{
+	fg[PRELIGHT]	= "#ffffff"
+	text[PRELIGHT]	= "#ffffff"
+}
+
+style "theme-panel-handle" 
+{
+	engine "pixmap" {    
+		image {
+			function = HANDLE
+		}    
+		image {
+			function = HANDLE
+		}
+	}
+}
+
+style "workspace-switcher"
+{
+xthickness 		= 3
+ythickness 		= 3
+
+	bg[NORMAL]   = #ff0000
+	bg[SELECTED] = shade (1.0, @selected_bg_color)
+	bg[PRELIGHT] = shade (1.2, @selected_bg_color)
+}
+
+widget "*PanelWidget*"			style "theme-panel"
+#widget "*PanelApplet*"			style "theme-panel"
+widget "*fast-user-switch*"		style "theme-panel"
+widget "*CPUFreq*Applet*"		style "theme-panel"
+widget "*indicator-applet*"		style "theme-panel"
+#class "PanelApp*"			style "theme-panel"
+class "PanelToplevel*"			style "theme-panel"
+widget_class "*MatePanelAppletFrameDBus*" style "theme-applet"
+widget_class "*PanelToplevel*"		style "theme-panel"
+widget_class "*PanelFrame*" 		style "theme-panel"
+widget_class "*PanelAppletFrame*" 	style "theme-panel"
+widget_class "*PanelWidget*.*"		style "theme-panel"
+#widget_class "*notif*"			style "theme-panel"
+#widget_class "*Notif*"			style "theme-panel"
+widget_class "*Tray*"			style "theme-panel" 
+widget_class "*tray*"			style "theme-panel"
+widget_class "*computertemp*"		style "theme-panel"
+widget_class "*Applet*Tomboy*"		style "theme-panel"
+widget_class "*Applet*Netstatus*"	style "theme-panel"
+widget "*WnckPager*"	    	    style "workspace-switcher"
+widget_class "XfcePagerPlugin*Pager*"	    	    style "workspace-switcher"
+
+# Fixes for tooltip text in some apps.
+widget_class "*Notif*Beagle*"	style "theme-panel-light"
+widget_class "*Notif*Brasero*"	style "theme-panel-light"
+
+# XFCE panel theming.
+widget "*Xfce*Panel*"	style "theme-panel"
+class "*Xfce*Panel*"	style "theme-panel"
+
+# Panel buttons
+widget_class "*Panel*GtkToggleButton"	style:highest "theme-panel-buttons"
+#widget_class "*Panel*GtkButton"	style:highest "theme-panel-buttons"
+
+# XFCE panel buttons
+widget "*Xfce*Panel*Button*"	style:highest "theme-panel-buttons"
+class "*Xfce*Panel*Button*"	style:highest "theme-panel-buttons"
+widget_class "*LauncherPlugin*"	style:highest "theme-panel-buttons"
+widget_class "*ActionsPlugin*"	style:highest "theme-panel-buttons"
+
+# lxpanel and fbpanel
+widget "*.tclock.*"		style "theme-panel-buttons"
+widget "*.taskbar.*"		style "theme-panel-buttons"
+widget_class "*GtkBgbox*"	style "theme-panel-buttons"
+
+# Make sure panel text color doesn't change
+widget_class "*Panel*MenuBar*"		style "theme-main-menu-text"
+widget_class "*Panel*<GtkMenuBar>*"	style "theme-main-menu-text"
+#widget "*.clock-applet-button.*"	style "theme-panel-text"
+#widget "*PanelApplet*"			style "theme-panel-text"
+
+# Hide ugly handle
+class "PanelAppletFrame" style:highest "theme-panel-handle"
+
+# The following removes the arrows from the panel
+
+style "panel-arrow-remove" {
+engine "pixmap" {
+	image {
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/assets/arrow-blank.png"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= UP
+		}
+	image {
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/assets/arrow-blank.png"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= DOWN
+		}
+	}
+}
+  
+# Fix xfce-notifyd button
+style "xfce-notifyd-button" {
+	fg[NORMAL]	= @text_color
+	fg[PRELIGHT]	= @text_color
+	fg[ACTIVE]	= @text_color
+	bg[NORMAL] = "#161618"
+}
+
+widget_class "XfceNotifyWindow.*.GtkButton*" style "xfce-notifyd-button"
