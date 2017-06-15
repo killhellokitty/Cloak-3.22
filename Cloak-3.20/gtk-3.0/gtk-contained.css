@@ -217,20 +217,20 @@ entry {
   entry:disabled {
     color: alpha(@theme_unfocused_fg_color,0.55);
     border-color: rgba(0,0,0,0.21);
-    background-image: linear-gradient(to bottom, #1a1a1b);
+    background-color: #1a1a1b;
     box-shadow: none; }
   spinbutton:backdrop:not(.vertical),
   entry:backdrop {
     color: alpha(@theme_unfocused_fg_color,0.8);
     border-color: rgba(0,0,0,0.21);
-    background-image: linear-gradient(to bottom, alpha(#1f1f20,0.8));
+    background-color: alpha(#1f1f20,0.8);
     box-shadow: none;
     transition: 200ms ease-out; }
   spinbutton:backdrop:disabled:not(.vertical),
   entry:backdrop:disabled {
     color: alpha(@theme_unfocused_fg_color,0.55);
     border-color: rgba(0,0,0,0.21);
-    background-image: linear-gradient(to bottom, alpha(#1a1a1b,0.65));
+    background-color: alpha(#1a1a1b,0.65);
     box-shadow: none; }
   spinbutton.error:not(.vertical),
   entry.error {
@@ -277,7 +277,7 @@ entry {
   entry {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: 0 1px black;
@@ -1045,7 +1045,7 @@ button.destructive-action {
   button.destructive-action {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(239, 41, 41, 0.5));
+    background-color: rgba(239, 41, 41, 0.5);
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
     text-shadow: 0 1px black;
