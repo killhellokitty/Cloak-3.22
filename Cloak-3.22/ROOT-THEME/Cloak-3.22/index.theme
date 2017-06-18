@@ -1,0 +1,10 @@
+[X-GNOME-Metatheme]
+Name=Cloak-3.22
+Type=X-GNOME-Metatheme
+Comment=dark elegance
+Encoding=UTF-8
+GtkTheme=Cloak-3.22
+MetacityTheme=Adwaita
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24

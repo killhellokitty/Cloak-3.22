@@ -1,0 +1,364 @@
+# vim:set ft=gtkrc ts=2 sw=2 sts=2 ai et:
+
+style "toplevel_hack" {
+  engine "adwaita" {}
+}
+
+# TODO: This could really look nicer
+style "gimp_spin_scale" {
+
+  # Spin background
+  bg[NORMAL] = @base_color
+
+  engine "pixmap" {
+
+    image {
+      function        = BOX
+      state           = NORMAL
+      detail          = "spinbutton_up"
+      overlay_file    = "assets/spin-up.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = PRELIGHT
+      detail          = "spinbutton_up"
+      overlay_file    = "assets/spin-up.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = ACTIVE
+      detail          = "spinbutton_up"
+      overlay_file    = "assets/spin-up.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = INSENSITIVE
+      detail          = "spinbutton_up"
+      overlay_file    = "assets/spin-up-insensitive.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = NORMAL
+      detail          = "spinbutton_down"
+      overlay_file    = "assets/spin-down.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = PRELIGHT
+      detail          = "spinbutton_down"
+      overlay_file    = "assets/spin-down.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = ACTIVE
+      detail          = "spinbutton_down"
+      overlay_file    = "assets/spin-down.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function        = BOX
+      state           = INSENSITIVE
+      detail          = "spinbutton_down"
+      overlay_file    = "assets/spin-down-insensitive.png"
+      overlay_stretch = FALSE
+    }
+
+ }
+
+}
+
+style "gksu_background" {	
+
+engine "pixmap"
+{
+	image
+	{
+		function 	= FLAT_BOX
+		file		= "assets/gksu.png"
+		border		= { 1,1,1,1 }
+	}
+
+  }
+}
+
+style "text" {
+
+	base[NORMAL] 	= "#aaaaab"
+		
+  engine "murrine"
+ 	{
+		text_shade 	= 0.7
+		textstyle 	= 2
+	}
+} 
+
+style "sidebar" {
+	
+  GtkTreeView::horizontal_separator = 15
+  GtkTreeView::vertical_separator = 2
+
+  text[NORMAL] = @fg_color
+  base[NORMAL] = @base_color
+  
+  GtkTreeView	:: even-row-color = @base_color #This is the color for the sidebar
+  GtkTreeView	:: odd-row-color  = @base_color
+}
+
+style "sidebar_small_slider" = "default" {
+  GtkRange::slider-width      = 8
+}
+
+style "thunar-location-buttons" {
+
+  ThunarLocationButtons::spacing = 0
+}
+
+style "thunar_pathbar_style" {
+
+  xthickness	= 3
+  ythickness	= 4
+}
+
+style "caja-view" {
+	xthickness = 0
+	ythickness = 0
+}
+
+style "caja-handle" {
+	GtkPaned::handle-size = 2
+	
+	engine "pixmap" {
+		# for the thin gray line separating the sidepane and viewpane
+		image {
+			function	= HANDLE
+			file		= "assets/null.png"
+			stretch		= TRUE
+			border		= { 0, 0, 0, 0 }
+		}
+	}
+}
+
+style "iconview" {
+
+	text[NORMAL]    = @fg_color
+	fg[NORMAL]      = @fg_color
+	base[NORMAL]    = "#040405"
+	base[ACTIVE]	= "#0a0a0b"
+}
+
+style "caja_iconview" {
+    base[NORMAL]    = "#1f1f20"
+    base[ACTIVE]    = "#1f1f20"
+}
+
+style "caja_toolbar" {
+    base[NORMAL]    = "#080809"
+    base[ACTIVE]    = "#080809"
+    bg[NORMAL]      = "#080809"
+    bg[ACTIVE]      = "#080809"
+}
+
+style "pluma-frame" {	
+	engine "pixmap" {
+ 		image {
+			function = SHADOW
+		}
+	}
+}
+
+style "pluma-statusbar" {	
+	ythickness = 0
+}
+
+style "pluma-notebook" = "default" {
+	xthickness = 0 # Width of tabs and notebook borders.
+	ythickness = 1 # Height of tabs and notebook borders.
+}
+
+style "thunar-frame" {
+	xthickness = 0
+	ythickness = 0
+}
+
+style "chrome-gtk-frame" {
+
+  ChromeGtkFrame::frame-color          = shade (1.05, @bg_color)
+  ChromeGtkFrame::frame-gradient-color = shade (1.05, @bg_color)
+  ChromeGtkFrame::inactive-frame-color = @bg_color
+
+  ChromeGtkFrame::incognito-frame-color          = "#acb7c2"
+  ChromeGtkFrame::incognito-frame-gradient-color = "#acb7c2"
+  ChromeGtkFrame::incognito-inactive-frame-color = mix (0.5, @bg_color, "#acb7c2")
+}
+
+style "chrome_entry" {
+
+  base[NORMAL] = "#1f1f20"
+  base[INSENSITIVE] = "#1f1f20"
+}
+
+# XFCE desktop icon text looks weird when murrine textstyle is on.
+style "xfdesktop-icon-view" {
+  XfdesktopIconView::label-alpha = 0
+  XfdesktopIconView::selected-label-alpha = 100
+  XfdesktopIconVIew::ellipsize-icon-labels = 1
+  XfdesktopIconView::tooltip-size = 128
+
+    XfdesktopIconView::shadow-x-offset = 1
+    XfdesktopIconView::shadow-y-offset = 1
+    XfdesktopIconView::shadow-color = "#77777a"
+    XfdesktopIconView::selected-shadow-x-offset = 1
+    XfdesktopIconView::selected-shadow-y-offset = 1
+    XfdesktopIconView::selected-shadow-color = "#aaaaab"
+
+    XfdesktopIconView::cell-spacing = 6
+    XfdesktopIconView::cell-padding = 6
+    XfdesktopIconView::cell-text-width-proportion = 2.5
+
+  base[NORMAL] = @selected_bg_color
+  base[SELECTED] = @selected_bg_color
+  base[ACTIVE] = @selected_bg_color
+
+  fg[NORMAL] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+}
+
+style "xfwm-tabwin" {
+  Xfwm4TabwinWidget::border-width = 1
+  Xfwm4TabwinWidget::border-alpha = 0.9
+  Xfwm4TabwinWidget::icon-size = 64
+  Xfwm4TabwinWidget::listview-icon-size = 16
+  Xfwm4TabwinWidget::preview-size = 512
+  Xfwm4TabwinWidget::alpha = 0.8
+  Xfwm4TabwinWidget::border-radius = 5
+
+	bg[NORMAL] = @bg_color
+	bg[ACTIVE]  = shade (0.65, @selected_bg_color)
+    bg[PRELIGHT]    = shade (0.85, @selected_bg_color)
+    bg[SELECTED]    = shade (0.45, @bg_color)
+
+	fg[NORMAL]  = shade (0.8, @base_color)
+    fg[ACTIVE]  = @base_color
+    fg[PRELIGHT]    = @base_color
+
+  engine "murrine" {
+    roundness       = 6
+    contrast = 0.7
+    glazestyle = 0
+    lightborder_shade   = 1.0
+    glowstyle = 0
+    highlight_shade = 1.0
+    gradient_shades     = {1.0,1.2,1.2,1.4}
+    border_shades       = { 1.5, 1.5 }
+    reliefstyle         = 0
+    shadow_shades       = { 1.3, 1.7 }
+    textstyle = 1
+    text_shade = 0.25
+  }
+}
+
+style "xfwm-tabwin-button" {
+
+  font_name = "bold"
+  bg[SELECTED] = @selected_bg_color
+}
+
+style "terminal_screen"
+{
+	text[NORMAL] = @fg_color
+	base[NORMAL] = "#000000"
+
+	TerminalScreen::background-darkness = 0.80
+}
+
+# Disable spin button assets for GimpSpinScale
+class "GimpSpinScale" style "gimp_spin_scale"
+
+#Gksu Dialog Box
+widget_class "*GksuuiDialogType" style "gksu_background"
+
+# Text using Murrine-Engine to make it cleaner and clearer(the Mist-Engine also has great text rendering) ##
+widget_class "*<GtkLabel>" style "text"
+
+# Sidebar Small Scrollbars
+widget_class "*CajaSidePane.*Scrollbar"        style:highest "sidebar_small_slider"
+widget_class "*ThunarShortcutsPane.*Scrollbar" style:highest "sidebar_small_slider"
+widget_class "*FmSidePane.*<GtkScrollbar>"   style:highest "sidebar_small_slider"
+
+# Thunar
+class "ThunarLocationButtons" style "thunar-location-buttons"
+widget_class	"*ThunarLocationButton*Button*"	style:highest	"thunar_pathbar_style"
+widget_class "*CajaPathBar.*ToggleButton*" 	style:highest "thunar_pathbar_style"
+
+# Handles Thunar and PcManFM
+widget	"*FmMainWin*FmTabPage*"	style "caja-handle"
+widget_class "*ThunarWindow*.<GtkHPaned>" style "caja-handle"
+widget	"*CajaNavigationWindow*GtkHPaned*"	style "caja-handle"
+widget  "*Caja*Splitter"  style "caja-handle"
+widget	"*FileChooserDefault*.GtkHPaned*"  style "caja-handle"
+
+# Sidebars
+class "*ThunarTreeView"	style "sidebar"
+widget_class "*FmPlacesView*"  style "sidebar"
+widget_class "*FmDirTreeView"  style "sidebar"
+widget_class "*<ThunarShortcutsPane>*<ThunarShortcutsView>"  style "sidebar"
+widget_class "*CajaSidePane.*"  style "sidebar"
+widget_class "*Caja*Places*Sidebar*"  style "sidebar"
+widget_class "*Caja*Side*.GtkWidget"  style "sidebar"
+widget_class "*Caja*Side*Title*"  style "sidebar"
+widget "*FileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView"  style "sidebar"
+
+widget_class "*Caja*View*"  style "caja-view"
+
+# Thunar and PcManFm IconView's
+widget "*Thunar*ExoIconView*"	style:highest "iconview"
+widget "*FmStandardView*View"	style:highest "iconview"
+widget "*CajaNotebook*"  style "caja_iconview"
+
+# Caja/Pluma toolbar
+widget_class "CajaNavigationWindow*GtkToolbar"  style "caja_toolbar"
+widget_class "PlumaWindow*GtkToolbar"  style "caja_toolbar"
+
+# Pluma
+widget_class "*Pluma*.<GtkFrame>*"		style "pluma-frame"
+widget_class "*Pluma*.<GtkNotebook>"		style "pluma-notebook"
+widget_class "*Pluma*.<GtkArrow>*"		style:highest "default"
+widget_class "*Pluma*.<GtkStatusbar>*"		style "pluma-statusbar"
+widget_class "Pluma*GtkHPaned*"    style "caja-handle"
+
+# sidebar scrolledwindow frame
+widget_class "*ThunarWindow*.*<ThunarShortcutsPane>*" style "thunar-frame"
+widget_class "*CajaSidePane*.*GtkNotebook*"  style "thunar-frame"
+
+# Chromium lets us define some colours and settings for better integration
+class "ChromeGtkFrame" style "chrome-gtk-frame"
+# Chromium uses base as the fill colour of its own entries
+# This would be fine but Gtk+ uses it to fill the surrounding space, so its set to bg
+# That results in Chromium using it for the fill, so we need to handle that
+widget_class "*Chrom*<GtkEntry>" style "chrome_entry"
+
+# TODO: find out what does does exactly
+# This uses the Adwaita engine for something, I'm not sure for what
+# However disabling it glitches out some separators in Libreoffice
+class "GtkWindow" style "toplevel_hack"
+
+# Xfce
+widget_class "*XfdesktopIconView*"                                  style "xfdesktop-icon-view"
+widget "xfwm4-tabwin*"                                              style "xfwm-tabwin"
+widget "xfwm4-tabwin*GtkButton*"                                    style "xfwm-tabwin-button"
+
+widget "*TerminalWindow.*.TerminalScreen*"              style "terminal_screen"

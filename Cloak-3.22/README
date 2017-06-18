@@ -1,0 +1,18 @@
+ROOT-THEME:
+Open ROOT-THEME folder and copy or symlink the 'Cloak-3.20' folder inside to Root's home folder, in the '.themes' folder (/root/.themes/).
+The Normal 'Cloack-3.22' theme must then be installed to your home folder inside the '.themes' ($HOME/.themes) folder for this to work.
+If there is no '.themes' folder please create them.
+
+Firefox:
+Open Firefox folder and copy or symlink the 'chrome' folder located inside to '$HOME/.mozilla/firefox/xSomeNumbers.default'.
+Restart Firefox for the changes to take effect.  This theme displaying correctly depends on 'Cloak-3.22' being selected as Gtk theme.
+To Remove:
+Simply move the 'chrome' folder inside '$HOME/.mozilla/firefox/xSomeNumbers.default' to the trash.
+
+gnome-shell-GDM:
+Open '/usr/share/gnome-shell/' and backup the 'gnome-shell-theme.gresource' file.
+Next open 'gnome-shell-GDM' folder inside the 'Cloak-3.22' folder and copy or symlink the 'gnome-shell-theme.gresource' file to '/usr/share/gnome-shell/'.
+The new theme will be installed when you restart.
+*NOTE- Any update to Gnome-Shell will erase the theme file and return it to the Adwaita default, you will need to reinstall.
+*NOTE- If you would like to change the background of the GDM screen to match you wallpaper or other, please refer to this article:
+https://bbs.archlinux.org/viewtopic.php?id=197036

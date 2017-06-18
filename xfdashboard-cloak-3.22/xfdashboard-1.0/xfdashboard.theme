@@ -1,0 +1,9 @@
+[Xfdashboard Theme]
+Name=xfdashboard-cloak-3.22
+Comment=Cloak theme for xfdashboard
+Style=xfdashboard-dark.css
+Layout=xfdashboard.xml;xfdashboard-secondary.xml
+Effects=effects.xml
+Author=killhellokitty
+Version=0.1.04242016
+Screenshot=screenshot-xfdashboard-cloak-3.20.png

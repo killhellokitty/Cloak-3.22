@@ -1,0 +1,23 @@
+# Bridge | ScionicSpectre
+
+#killhellokitty 2016 Cloak-3.22
+# vim:set ts=2 sw=2 sts=2 ai et:
+
+# Text/base colors
+gtk-color-scheme = "text_color:#bbbbbc\nbase_color:#141416"
+# Foreground/background colors
+gtk-color-scheme = "fg_color:#aaaaab\nbg_color:#0f0f10"
+# Selected foreground/background colors
+gtk-color-scheme = "selected_fg_color:#000000\nselected_bg_color:#acb7c2"
+# Tooltip colors
+gtk-color-scheme = "tooltip_fg_color:#ffffff\ntooltip_bg_color:#000000"
+
+gtk-icon-sizes		= "gtk-button=16,16" # This makes button icons smaller.
+gtk-button-images	= 0 # Enables icons in buttons
+gtk-toolbar-style	= 0 # Disables text in toolbar
+gtk-auto-mnemonics	= 1 # Disables ugly lines under menu items
+gtk-primary-button-warps-slider = 1
+
+include "main.rc"
+include "apps.rc"
+include "panel.rc"

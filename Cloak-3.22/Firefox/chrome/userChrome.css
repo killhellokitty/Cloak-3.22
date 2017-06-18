@@ -1,0 +1,1515 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+/************************ DO NOT remove the Above line  **********************/
+/************************ Add USER code BELLOW this line *********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************** Dorian Theme ***************************/
+                   /* by killhellokitty/jo-shva may 2014 */    
+/* Blank background before clicked link page loads....
+    see userContent.css for blank tab and initial Firefox startup blank
+    before homepage loads */
+    tabbrowser tabpanels {
+    background-color: rgba(0,0,0,0.8) !important;
+    }
+
+#main-menubar {
+  -moz-box-flex: 1; /* make menu items expand to fill toolbar height */
+}
+
+/* NavBar */
+
+
+#nav-bar {
+  -moz-appearance: none !important;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)) !important;
+  background-color: rgba(0,0,0,0.0) !important;
+  box-shadow: none !important;
+  margin-top: -1px !important; /* Move up into the TabsToolbar */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  /* Position the toolbar above the bottom of background tabs */
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+
+
+
+
+
+/* Restyle bookmark bars -- tabs on top */
+
+#navigator-toolbox #PersonalToolbar {
+background: rgba(0,0,0,0.8)!important;
+  background-image:  none !important;
+  border-top: 0px solid rgba(9,9,9,0.55) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.92) !important;
+  box-shadow: 0px 1px 0 rgba(255,255,255,0.02) inset,
+				inset 0 -1px 0 rgba(0,0,0, 0.86)!important;
+  margin-bottom: -1px !important;			
+}
+
+/* Places toolbar *//* ::::: bookmark buttons ::::: */
+
+#PersonalToolbar {
+  font-size: .885em !important;
+}
+
+#personal-bookmarks {
+  min-height: 18px !important;
+}
+
+toolbarbutton.bookmark-item {
+  -moz-appearance: none !important;
+  border: 2px solid rgba(0,0,0,.0) !important;
+  border-radius: 2px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  color: #aaaaab !important;
+  text-shadow: none !important;
+ background: transparent
+			-moz-linear-gradient(rgba(255,255,255,.03), rgba(255,255,255,.005)) !important;
+}
+
+toolbarbutton.bookmark-item:hover {
+  color: #dddddf !important;
+  border: 2px solid rgba(172,183,194,0.65) !important;
+background: transparent
+			-moz-linear-gradient(rgba(255,255,255,0.16), rgba(255,255,255,0.08)) !important;
+    box-shadow: 0 1px 1px rgba(255,255,255,.04) inset !important;
+  -moz-transition: background-color .16s ease-in,
+                   border-color .2s ease-in,
+                   box-shadow .3s ease-in !important;
+}
+
+toolbarbutton.bookmark-item:hover:active:not([disabled="true"]),
+toolbarbutton.bookmark-item[open="true"] {
+  color: #ffffff !important;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.75) !important;
+  border: 2px solid #acb7c2 !important;
+background: transparent
+			-moz-linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.16)) !important;
+    box-shadow: 0 1px 1px rgba(255,255,255,.04) inset !important;
+  -moz-transition: background-color .16s ease-in,
+                   border-color .2s ease-in,
+                   box-shadow .3s ease-in !important;
+}
+
+#nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack,
+#TabsToolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover > .toolbarbutton-icon,
+#nav-bar #forward-button:hover > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-container {
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom,
+                                      #161619,
+                                      #141415,
+                                      #101013
+                                      ) !important;
+  border-color: rgba(0, 0, 0, 1) !important;
+  color: #aaaaab;
+  text-shadow: 0 1px rgba(0,0,0, 0.76923) !important;
+  transition: background-color .1s ease-in,
+              border-color .15s ease-in;
+	box-shadow: 0px 1px rgba(255, 255, 255, 0.06) inset, 0px 1px rgba(255,255,255,0.04) !important;
+}
+
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):not([open]):not(:active):hover > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon {
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom,
+                                      #19191b,
+                                      #171719,
+                                      #141417
+                                      ) !important;
+  border-color: #000000 !important;
+  color: #dddddf !important;
+  text-shadow: 0 1px rgba(0,0,0, 0.76923) !important;
+  transition: background-color .1s ease-in,
+              border-color .15s ease-in;
+	box-shadow: 0px 1px rgba(255, 255, 255, 0.10) inset, 0px 1px rgba(255,255,255,0.02) !important;
+}
+
+#nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1[checked]:not(:active):hover > .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
+#nav-bar #forward-button:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover:active > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-container{
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom,
+                                      #040406,
+                                      #060608
+                                      ) !important;
+  border-color: #000000!important;
+  box-shadow: 0px 2px 5px rgba(0,0,0,.8)inset,
+			  0px 1px rgba(255,255,255,.12) !important;
+  text-shadow: none!important;
+  transition: background-color .1s ease-in,
+              border-color .15s ease-in!important;
+}
+
+#nav-bar .toolbarbutton-1[checked]:not(:active):hover > .toolbarbutton-icon {
+  background-color: rgba(255,255,255,.05)!important;
+  transition: background-color .4s!important;
+}
+
+window:not([chromehidden~="toolbar"]) #urlbar-container > #back-button:not([open]):not(:active):not([disabled]) > .toolbarbutton-icon {
+  border-radius: 10000px !important;
+  padding: 5px !important;
+  border: 1px solid #000000 !important;
+  margin-right: -3px !important;
+  background-image: linear-gradient(#161618,
+					#161618) !important;
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.10) inset, 0px 1px rgba(255,255,255,0.01) !important;
+  transition-property: background-color, box-shadow !important;
+}
+
+window:not([chromehidden~="toolbar"]) #urlbar-container > #back-button:not([open]):not(:active):not([disabled]):hover > .toolbarbutton-icon{
+background-image: linear-gradient(#161618,
+					#141417,
+					#101013) !important;
+  border: 1px solid rgba(172,183,194,0.5) !important;				
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1),
+              0 1px 0 rgba(255,255,255,0.12) !important;
+  transition: none;
+}
+
+window:not([chromehidden~="toolbar"]) #urlbar-container > #back-button:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon {
+  border: 1px solid rgba(172,183,194,0.5) !important;
+  margin-right: -3px !important;
+}
+
+window:not([chromehidden~="toolbar"]) #urlbar-container > #back-button:-moz-any([disabled],:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon {
+  border: 1px solid rgba(0,0,0,0.21) !important;
+  background-image: none !important;
+  background-color: #161618 !important;
+  box-shadow: 0 1px rgba(0,0,0,0.1),
+              inset 0 1px rgba(255,255,255,0.1) !important;
+  margin-right: -3px !important;
+  opacity: 1 !important;
+}
+
+/*forward-button*/
+#nav-bar #forward-button > .toolbarbutton-icon {
+  border: 1px solid rgba(172,183,194,0.5) !important;
+  background-image: linear-gradient(#161618,
+					#141417,
+					#101013) !important;
+  box-shadow: 0 1px rgba(0,0,0,0.1),
+              inset 0 1px rgba(255,255,255,0.1) !important;
+  margin-right: -1px !important;
+}
+
+/*************************** Dropmarker *******************************/
+dropmarker {
+  -moz-appearance: none!important;
+  width: 16px!important;
+  height: 16px!important;
+  -moz-box-align: center!important;
+  -moz-box-pack: center!important;
+  list-style-image: url("images/arrow-dn[dropmarker].png")!important;
+  -moz-image-region: auto!important;
+}
+
+dropmarker:hover:active:not([disabled="true"]) {
+  padding-top: 2px!important;
+  padding-bottom: 0px!important;
+  -moz-padding-start: 2px!important;
+  -moz-padding-end: 0px!important;
+}
+
+dropmarker[disabled="true"] {
+  list-style-image: url("images/arrow-dn-dis.gif") !important;
+}
+
+.searchbar-dropmarker-image {
+  -moz-appearance: none!important;
+  list-style-image: url("images/arrow-dn[dropmarker].png")!important;
+  -moz-image-region: auto!important;
+  width: 7px!important;
+  height: 4px!important;
+  margin: 4px !important;
+  margin-left: 7px !important;
+}
+
+/* Location bar */
+
+#urlbar,
+.searchbar-textbox,
+toolbar textbox {
+
+  border-top: 1px solid rgb(0,0,0) !important;
+  border-left: 1px solid rgb(0,0,0) !important;
+  border-right: 1px solid rgb(0,0,0) !important;
+  border-bottom: 1px solid rgb(0,0,0) !important;
+    border-radius: 3px !important;
+
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(#1a1a1b,
+					#1d1d1e,
+					#1f1f20) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset,
+				0 2px rgba(0,0,0,0.16) inset,
+				0 1px rgba(255,255,255,0.04) !important;
+}
+
+#urlbar:hover,
+.searchbar-textbox:hover,
+toolbar textbox:hover {
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(#1a1a1b,
+					#1d1d1e,
+					#1f1f20) !important;
+}
+
+/*
+.searchbar-textbox {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+ }
+
+[privatebrowsingmode=temporary] #urlbar,
+[privatebrowsingmode=temporary] .searchbar-textbox {
+  box-shadow: 0px 2px 4px  rgba(0,0,0,0.2) inset, 
+			1px 1px 3px rgba(237,52,49,0.2)inset,
+			-1px -1px 3px rgba(237,52,49,0.12)inset,
+			   0px 1px 0 rgba(255,255,255,.1) !important;
+}
+*/
+
+#urlbar[focused="true"],
+.searchbar-textbox[focused="true"],
+toolbar textbox[focused="true"] {
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(#1a1a1b,
+					#1d1d1e,
+					#1f1f20) !important;
+  -moz-transition: .40s ease-in !important;
+    box-shadow: inset 0 0 0px 2px rgba(172,183,194,0.65) !important;
+}
+.urlbar-textbox-container {
+  color:#aaaaab !important;
+}
+
+.searchbar-textbox[focused="true"],
+.searchbar-textbox[focused="true"]:hover {
+  	color: #dddddf !important;
+  }
+  
+.urlbar-textbox-container[focused="true"],
+.urlbar-textbox-container[focused="true"]:hover {
+  color: #f2f2f2 !important;
+}
+
+.urlbar-textbox-container:hover {
+ color: #aaaaab !important;
+}
+
+#identity-box {
+  padding: 2px!important;
+  font-size: .9em!important;
+  background: transparent!important;
+  color: rgb(255,255,255)!important;
+  font-weight: bold!important;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75)!important;
+  }
+  
+#identity-box:-moz-locale-dir(ltr) {
+  border-top-left-radius: 2px!important;
+  border-bottom-left-radius: 2px!important;
+}
+
+#identity-box:-moz-locale-dir(rtl) {
+  border-top-right-radius: 2px!important;
+  border-bottom-right-radius: 2px!important;
+}
+
+#downloads-indicator-progress {
+  width: 16px!important;
+  height: 5px!important;
+  min-width: 0!important;
+  min-height: 0!important;
+  margin-top: 1px!important;
+  margin-bottom: 2px!important;
+  border-radius: 2px!important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1)!important;
+}
+
+#downloads-indicator-progress > .progress-bar {
+  -moz-appearance: none!important;
+  min-width: 0!important;
+  min-height: 0!important;
+  background-clip: padding-box, border-box!important;
+  background: #acb7c2!important;
+  border-radius: 2px!important;
+  box-shadow: 0px 0px 3px rgba(255,255,255,.0.04)!important;
+}
+
+#downloads-indicator-progress > .progress-remainder {
+  -moz-appearance: none!important;
+  min-width: 0!important;
+  min-height: 0!important;
+  background: #252528!important;
+  box-shadow: 0px 2px 2px rgba(0,0,0,.25)inset!important;
+  -moz-border-start: none!important;
+  border-radius: 2px!important;
+}
+
+#downloadsHistory {
+  border-top: 1px solid rgb(0,0,0) !important;
+  background: #1c1c1f;
+  box-shadow: 0px 1px 0px  rgba(255,255,255,.1)inset !important;
+  color: #aaaaab;
+  cursor: pointer;
+  border-radius: 0px 0px 2px 2px;
+}
+
+#downloadsHistory:hover {
+  color: #dddddf;
+  text-shadow: 0px 0px 3px rgb(255,255,255,.5);
+  background: #202022;
+  transition: background .15s ease-in;
+}
+
+#downloadsHistory:hover:active {
+  color: rgb(255,255,255);
+  text-shadow: none;
+  background: #1a1a1c !important;
+  box-shadow: 0px 2px 5px rgba(0,0,0,.5)inset !important;
+  transition: background .15s ease-in;
+}
+
+checkbox,
+radiogroup {
+background-color: #161618 !important;
+}
+
+[privatebrowsingmode=temporary] #urlbar[focused="true"],
+[privatebrowsingmode=temporary] .searchbar-textbox[focused="true"] {
+  -moz-transition: .40s ease-in !important;
+  box-shadow: 0px 2px 4px  rgba(0,0,0,0.36) inset, 
+			0 0 0 2px rgba(196,111,224,0.85)inset,
+			   0px 1px 0 rgba(255,255,255,.12) !important;
+}
+
+/* combined go/reload/stop button in location bar */
+/*
+#urlbar > toolbarbutton {
+  -moz-appearance: none !important;
+  background-origin: border-box!important;
+  border: none!important;
+  border-left: 2px solid !important;
+  -moz-border-left-colors:    rgba(0, 0, 0, 0.2) rgba(255, 255, 255, 0.06)!important;
+  border-top-right-radius: 2px!important;
+  border-bottom-right-radius:2px!important;
+  -moz-transition: opacity 150ms ease-out!important;
+  margin-right: -1px !important;
+  margin-top: -3px !important;
+  margin-bottom: -3px !important;
+  padding-right: 4px !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  padding-left: 4px !important;
+}
+
+#urlbar > toolbarbutton:-moz-locale-dir(rtl){
+  border-left: 0px !important;
+  border-right: 2px solid !important;
+  -moz-border-left-colors: rgba(255, 255, 255, 0.06) rgba(0, 0, 0, 0.2) !important;
+  border-top-right-radius: 0px!important;
+  border-bottom-right-radius: 0px!important;
+  border-top-left-radius: 2px!important;
+  border-bottom-left-radius: 2px!important;
+}
+
+#urlbar > toolbarbutton:not([disabled]):active:hover {
+  background: rgba(0,0,0,0.18) !important;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2)inset,
+				0 -1px 0 rgba(0,0,0,0.12)inset,
+				-1px 0 0 rgba(0,0,0,0.16)inset,
+				1px 0 0 rgba(255,255,255,0.016)inset,
+				-1px 0 0 rgba(0,0,0,0.06)!important;
+}
+
+#urlbar > toolbarbutton:not([disabled]):hover {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2)inset,
+				0 -1px 0 rgba(0,0,0,0.12)inset,
+				-1px 0 0 rgba(0,0,0,0.16)inset,
+				1px 0 0 rgba(255,255,255,0.016)inset,
+				-1px 0 0 rgba(0,0,0,0.06)!important;
+}
+
+#urlbar > toolbarbutton:not([disabled]):active:hover:-moz-locale-dir(rtl){ 
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2)inset,
+				0 -1px 0 rgba(0,0,0,0.12)inset,
+				1px 0 0 rgba(0,0,0,0.16)inset,
+				-1px 0 0 rgba(255,255,255,0.016)inset,
+				1px 0 0 rgba(0,0,0,0.06)!important;
+}
+
+#urlbar > toolbarbutton:not([disabled]):hover:-moz-locale-dir(rtl){ 
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2)inset,
+				0 -1px 0 rgba(0,0,0,0.12)inset,
+				1px 0 0 rgba(0,0,0,0.16)inset,
+				-1px 0 0 rgba(255,255,255,0.016)inset,
+				1px 0 0 rgba(0,0,0,0.06)!important;
+}
+
+#urlbar-go-button:not([disabled]):not([hover]):not([active]),
+#urlbar-reload-button:not([disabled]):not([hover]):not([active]) {
+-moz-appearance: none !important;
+  background: rgba(0,0,0,0)!important;
+  color: #3c3c3c !important;
+  }
+
+#urlbar-reload-button:not([disabled]):hover {
+-moz-appearance: none !important;
+  background: #5c5c5e!important;
+  color: #aaaaab!important;
+  border-top: 1px solid rgb(0,0,0) !important;
+  border-bottom: 1px solid rgb(0,0,0) !important;
+  }
+
+#urlbar-go-button:hover {
+  background: #5c5c5e!important;
+  -moz-appearance: none !important;
+  border-top: 1px solid rgb(0,0,0) !important;
+  border-bottom: 1px solid rgb(0,0,0) !important;
+  }
+  
+#urlbar-stop-button:hover {
+  background: rgba(237,52,49,0.34)!important;
+  border-top: 1px solid rgb(0,0,0) !important;
+  border-bottom: 1px solid rgb(0,0,0) !important;
+  }*/
+    
+/* primary toolbar buttons */
+/*
+#nav-bar {
+  
+  counter-reset: smallicons!important;
+}*/
+
+/****/
+/*
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button {
+ -moz-appearance: none !important;
+ 
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  -moz-margin-end: 0 !important;
+  border-right: 0px !important;
+  border-left: 0px !important;
+  transition: background-color .2s ease-in !important;
+  box-shadow: 0px 1px 0px rgba(24,24,24,0.8) inset,
+				0 -1px 1px rgba(0,0,0,0.2)inset,
+				-1px 0 0 rgba(26,26,26,0.8)inset,
+				1px 0 1px rgba(0,0,0,0.16),
+			  0px 1px 0 rgba(255,255,255,.09) !important;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:not([switchingtabs]) > #forward-button {
+  transition: opacity 150ms ease-out !important;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:not(:hover) > #forward-button[disabled] {
+  opacity: 0 !important;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:hover > #forward-button[disabled] {
+  box-shadow: none !important;
+}
+
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button {
+  -moz-appearance: none !important;   
+  border-radius: 3px!important;    
+  padding: 0!important;   
+  position: relative !important;
+  z-index: 1 !important;
+  width: 34px !important;
+  height: 30px !important;
+  margin-top: 2px!important;
+  margin-bottom: 2px !important;
+
+  background: -moz-linear-gbackground-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%);radient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.09), 
+					rgba(255,255,255,.0) 49%, 
+					rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #313131!important; 
+					   
+  border-top: 1px solid rgb(46,46,46) !important;
+  border-left: 1px solid rgb(28,28,28) !important;
+  border-right: 1px solid rgb(28,28,28) !important;
+  border-bottom: 1px solid rgb(26,26,26) !important;    
+  box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 -1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;
+}
+
+#clearDownloadsButton {
+  -moz-appearance: none !important;   
+  border-radius: 3px!important;    
+  background: -moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.09), 
+					rgba(255,255,255,.0) 49%, 
+					rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #313131!important; 
+					   
+  border-top: 1px solid rgb(46,46,46) !important;
+  border-left: 1px solid rgb(28,28,28) !important;
+  border-right: 1px solid rgb(28,28,28) !important;
+  border-bottom: 1px solid rgb(26,26,26) !important;    
+  box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 -1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;
+}
+
+#back-button {
+  -moz-appearance: none !important;   
+  border-radius: 3px 0 0 3px!important;    
+  padding: 1px!important; 
+  margin-top: 2px!important;
+  margin-bottom: 2px !important;
+  margin-left: 2px!important;
+  background: -moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.09), 
+					rgba(255,255,255,.0) 49%, 
+					rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #313131!important; 
+					   
+  border-top: 1px solid rgb(46,46,46) !important;
+  border-left: 1px solid rgb(28,28,28) !important;
+  border-right:0px solid !important;
+  border-bottom: 1px solid rgb(26,26,26) !important;    
+  box-shadow: -1px 0 0 rgba(0,0,0,0.16)inset, 
+				1px 1px 2px rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 -1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;
+}
+
+#clearDownloadsButton:not([disabled]):hover,
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button:not([disabled="true"]):not([checked="true"]):not(:active):hover,
+#back-button:not([disabled]):hover {
+  padding: 1px!important;
+  -moz-appearance: none !important; 
+  -moz-border-image: none!important;     
+  background:-moz-linear-gradient(rgba(255,255,255,.08), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.11), rgba(255,255,255,.0) 49%, 
+               rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #154478!important;   
+  border-top: 1px solid #123a66 !important; 
+  border-left: 1px solid #0F2F54 !important; 
+  border-right: 1px solid #0F2F54 !important; 
+  border-bottom: 1px solid #0b2441 !important; 
+  box-shadow:  -1px -1px 1px 1px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.26) inset,
+				 -1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;  
+ }
+ 
+ #back-button:not([disabled]):hover {     
+  background:-moz-linear-gradient(rgba(255,255,255,.08), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.11), rgba(255,255,255,.0) 49%, 
+               rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #154478!important;   
+  border-top: 1px solid #123a66 !important; 
+  border-left: 1px solid #0F2F54 !important;  
+  border-bottom: 1px solid #0b2441 !important; 
+  border-right: 0 solid !important; 
+	box-shadow: -1px 0 0 rgba(0,0,0,0.16)inset, 
+				1px 1px 2px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.26) inset,
+				 -1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;			 
+ }
+
+#clearDownloadsButton:not([disabled]):active,
+#clearDownloadsButton:not([disabled]):active:hover,
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button:not([disabled="true"]):hover:active,
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[open="true"]:hover,
+#back-button:not([disabled]):active,
+#back-button:not([disabled]):active:hover {
+  -moz-appearance: none !important; 
+  background: -moz-linear-gradient(rgba(255,255,255,.00), 
+					rgba(255,255,255,.0) 50%, rgba(255,255,255,0.055)), 
+					-moz-linear-gradient(rgba(0,0,0,.11), 
+					rgba(0,0,0,.0) 49%, 
+					rgba(255,255,255,.0) 51%, 
+					rgba(255,255,255,.08)), #0d2b4d!important; 
+  border-top: 1px solid #123a66 !important; 
+  border-left: 1px solid #0F2F54 !important; 
+  border-right: 1px solid #0F2F54 !important; 
+  border-bottom: 1px solid #0b2441 !important;				
+  box-shadow: 0px -2px 2px rgba(255, 255, 255, 0.04) inset, 
+				0px 2px 0px rgba(255, 255, 255, 0.16) inset,
+				 -1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;               
+}
+
+#back-button:not([disabled]):active,
+#back-button:not([disabled]):active:hover { 
+  background: -moz-linear-gradient(rgba(255,255,255,.00), 
+					rgba(255,255,255,.0) 50%, rgba(255,255,255,0.055)), 
+					-moz-linear-gradient(rgba(0,0,0,.11), 
+					rgba(0,0,0,.0) 49%, 
+					rgba(255,255,255,.0) 51%, 
+					rgba(255,255,255,.08)), #0d2b4d!important; 
+  border-top: 1px solid #123a66 !important; 
+  border-left: 1px solid #0F2F54 !important; 
+  border-right: 0px solid !important; 
+  border-bottom: 1px solid #0b2441 !important;				  			 
+	box-shadow: -1px 0 0 rgba(0,0,0,0.16)inset, 
+				0px -1px 2px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.16) inset,
+				 -1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;			              
+}
+
+#clearDownloadsButton[disabled="true"],
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[disabled],
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[disabled="true"],
+#back-button[disabled="true"] { 
+  background: url("images/stripe-5.png"), #3a3a3a!important;				
+    background-size: 6px!important;
+    background-repeat: repeat!important;
+}
+
+#back-button[disabled="true"] { 
+  background: url("images/stripe-5.png"), #3a3a3a!important;
+  border-right: 0 solid !important;				
+    background-size: 6px!important;
+    background-repeat: repeat!important;
+    box-shadow: -1px 0 0 rgba(0,0,0,0.16)inset, 
+				1px 1px 2px rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 -1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;
+}
+
+#clearDownloadsButton,
+#clearDownloadsButton:not([disabled]):hover {
+	width: 100%!important;
+	height: 100%!important;
+	margin: 0 !important;
+	padding: 4px 5px !important;
+}
+
+toolbar:not([iconsize="small"])[mode="icons"][currentset*="unified-back-forward-button"],
+#nav-bar:not([iconsize="small"])[mode="icons"]:not([currentset]) {
+  padding-top: 3px!important;
+  padding-bottom: 6px!important;
+}
+
+#navigator-toolbox[tabsontop="true"] > toolbar:not([iconsize="small"])[mode="icons"][currentset*="unified-back-forward-button"],
+#navigator-toolbox[tabsontop="true"] > #nav-bar:not([iconsize="small"])[mode="icons"]:not([currentset]) {
+  padding-top: 5px!important;
+}
+
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button,
+      window:not([chromehidden~=toolbar]) :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"][mode=icons], 
+      #nav-bar:not([currentset])[mode=icons]) > #unified-back-forward-button > #forward-button {
+  -moz-appearance: none !important; 
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar")!important;
+  -moz-margin-start: -6px !important;
+  padding: 0 !important;
+  border-radius: 0px  !important;
+  margin-top: 5px!important;
+  margin-bottom: 5px !important;
+  padding-left: 7px !important;
+  padding-right: 3px !important;
+  background: -moz-linear-gradient(rgba(255,255,255,.03), 
+					rgba(255,255,255,.0) 25%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 49%, 
+					rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #313131!important; 
+  border: 0 solid!important;
+  box-shadow:  0 1px 1px rgb(34,34,34) inset, 
+				0 -1px 0 rgb(20,20,20) inset, 
+				0px -2px 2px rgba(255, 255, 255, 0.04) inset, 
+				0px 2px 0px rgba(255, 255, 255, 0.16) inset,
+				 0 1px 2px rgba(0,0,0, 0.24), 
+				 0 -1px 2px rgba(0,0,0,0.02)!important;
+	-moz-transition: .2s ease-in !important;			 
+  }
+
+#placesToolbar #forward-button {
+  -moz-appearance: none !important;   
+  border-radius: 0 3px 3px 0!important;    
+  padding: 1px!important; 
+  margin-top: 2px!important;
+  margin-bottom: 2px !important;
+  margin-right: 2px !important;
+  background: -moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.09), 
+					rgba(255,255,255,.0) 49%, 
+					rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #313131!important; 
+					   
+  border-top: 1px solid rgb(46,46,46) !important;
+  border-left: 0px solid rgba(255,255,255,0.06) !important;
+  border-right: 1px solid rgb(28,28,28) !important;
+  border-bottom: 1px solid rgb(26,26,26) !important;    
+  box-shadow: 1px 0 0 rgba(255,255,255,0.06)inset, 
+				-1px 1px 0 rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;
+}
+
+#placesToolbar #forward-button:not([disabled]):hover {
+  background: -moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.11), rgba(255,255,255,.0) 49%, 
+               rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #154478!important; 
+  box-shadow:  -1px -1px 1px 1px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important; 
+  border-top: 1px solid #123a66 !important; 
+  border-right: 1px solid #0F2F54 !important;  
+  border-bottom: 1px solid #0b2441 !important; 
+  border-left: 0 solid !important; 
+	box-shadow: 1px 0 0 rgba(255,255,255,0.06)inset, 
+				-1px 1px 0 rgba(255, 255, 255, 0.04) inset,  
+				0px 1px 0px rgba(255, 255, 255, 0.26) inset,
+				 1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;  
+  -moz-transition: .2s ease-in !important;			            
+}
+
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button:not([disabled="true"]):not(:active):hover,
+#forward-button:not([disabled]):hover {
+-moz-appearance: none !important;
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar")!important;
+  padding: 0 !important;
+  padding-left: 7px !important;
+  padding-right: 3px !important;
+  margin-top: 5px!important;
+  margin-bottom: 5px !important;
+  background: -moz-linear-gradient(rgba(255,255,255,.06), 
+					rgba(255,255,255,.0) 35%, rgba(255,255,255,0.0)), 
+					-moz-linear-gradient(rgba(255,255,255,.11), rgba(255,255,255,.0) 49%, 
+               rgba(0,0,0,.0) 50%, rgba(0,0,0,.08)), #154478!important;
+  border-top: 1px solid #123a66 !important; 
+  border-bottom: 1px solid #0b2441 !important; 
+  box-shadow:  -1px -1px 1px 1px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important; 
+	-moz-transition: opacity .2s ease-in !important;			            
+}
+
+
+
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button:not([disabled="true"]):hover:active,
+#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button[open="true"]:hover,
+#forward-button:not([disabled]):active,
+#forward-button:not([disabled]):active:hover {
+-moz-appearance: none !important;
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar")!important;
+  background:  -moz-linear-gradient(rgba(255,255,255,.00), 
+					rgba(255background-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%);,255,255,.0) 40%, rgba(255,255,255,0.055)), 
+					-moz-linear-gradient(rgba(0,0,0,.11), 
+					rgba(0,0,0,.0) 49%, 
+					rgba(255,255,255,.0) 51%, 
+					rgba(255,255,255,.08)),#0d2b4d!important;
+	border-top: 1px solid #123a66 !important; 
+  border-bottom: 1px solid #0b2441 !important;				
+  box-shadow: 0px -1px 1px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.10) inset,
+				 1px -1px 1px 1px rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;             
+}
+
+#placesToolbar #forward-button:not([disabled]):active,
+#placesToolbar #forward-button:not([disabled]):active:hover {
+-moz-appearance: none !important;
+  list-style-image: url("moz-icon://stock/gtk-go-forward-ltr?size=toolbar")!important;
+  background:  -moz-linear-gradient(rgba(255,255,255,.00), 
+					rgba(255,255,255,.0) 40%, rgba(255,255,255,0.055)), 
+					-moz-linear-gradient(rgba(0,0,0,.11), 
+					rgba(0,0,0,.0) 49%, 
+					rgba(255,255,255,.0) 51%, 
+					rgba(255,255,255,.08)),#0d2b4d!important;
+	border-top: 1px solid #123a66 !important; 
+  border-right: 1px solid #0F2F54 !important; 
+  border-left: 0px solid !important; 
+  border-bottom: 1px solid #0b2441 !important;				  			 
+	box-shadow: 1px 0 0 rgba(255,255,255,0.06)inset,
+				0px -1px 2px rgba(255, 255, 255, 0.04) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.16) inset,
+				 1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;	            
+}
+
+#placesToolbar #forward-button[disabled="true"] { 
+  background: url("images/stripe-5.png"), #3a3a3a!important;
+  border-left: 0 solid !important;				
+    background-size: 6px!important;
+    background-repeat: repeat!important;
+    box-shadow: 1px 0 0 rgba(255,255,255,0.06)inset, 
+				-1px 1px 0 rgba(255, 255, 255, 0.03) inset, 
+				0px 1px 0px rgba(255, 255, 255, 0.11) inset,
+				 1px -1px 0 rgba(0,0,0,0.06),
+				 0 1px 2px  rgba(0,0,0,0.16)!important;    
+  -moz-transition: .2s ease-in !important;
+}*/
+
+/******************************* Status panel ********************************/
+.statuspanel-label {
+  margin: 0!important;
+  padding: 2px 4px!important;
+  border: 1px solid rgba(0,0,0, 1.0)!important;
+  border-radius: 2px 2px 0 0!important;
+  border-bottom-style: none !important;
+  text-shadow: 1px 1px rgba(0,0,0, 0.4)!important;
+  background-color: rgba(0,0,0,0.9) !important;
+  background-image: none!important;
+  box-shadow: none!important;
+  color: #aaaaab !important;
+  font-weight: bold !important;
+  font-size: 0.975em !important;
+}
+
+/************************* Text Input Boxes ***************************/
+
+textbox,
+.menulist-editable-box {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  border: 1px solid rgb(0,0,0) !important;
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%)!important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset,
+				0 2px rgba(0,0,0,0.16) inset,
+				0 1px rgba(255,255,255,0.04) !important;
+}
+
+tabpanels textbox,
+tabpanels .menulist-editable-box,
+tabpanels .numberbox-input-box {
+  -moz-appearance: none !important;
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%)!important;
+  border: 1px solid rgb(0,0,0) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset,
+				0 2px rgba(0,0,0,0.16) inset,
+				0 1px rgba(255,255,255,0.04) !important;
+			  
+}
+
+.numberbox-input-box,
+.spinnbuttons-box,
+.spinbuttons-button {
+  -moz-appearance: none !important;
+  background: transparent !important;
+  border: transparent !important;
+}
+
+.numberbox-input-box,
+.spinnbuttons-box {
+ border-radius: 3px 0 0 3px!important;
+}
+
+.spinbuttons-button {
+  border-left: 2px solid !important;
+  -moz-border-left-colors:    rgba(0, 0, 0, 0.32) rgba(255, 255, 255, 0.04)!important;
+  } 
+
+
+
+textbox[focused="true"],
+.menulist-editable-box[focused="true"] {
+  border: 1px solid rgb(0,0,0) !important;
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%)!important;
+  -moz-transition: .40s ease-in !important;
+  box-shadow: inset 0 0 0px 2px rgba(172,183,194,0.65) !important;
+}
+
+tabpanels textbox[focused="true"],
+tabpanels .menulist-editable-box[focused="true"],
+tabpanels .numberbox-input-box[focused="true"] {
+  border: 1px solid rgb(0,0,0) !important;
+  background: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom, #1a1a1b, #1d1d1e 2px, #1f1f20 90%)!important;
+  -moz-transition: .40s ease-in !important;
+  box-shadow: inset 0 0 0px 2px rgba(172,183,194,0.65) !important;
+			  
+}
+
+textbox[disabled="true"],
+.menulist-editable-box[disabled="true"] {
+  -moz-appearance: none !important;
+  border: 1px solid rgba(0,0,0,0.21) !important;
+  background:  #1a1a1b !important;
+  background-image: none!important;
+  box-shadow: none !important;
+  color: rgba(170,170,171,0.55)!important;
+}
+
+tabpanels textbox[disabled="true"],
+tabpanels .menulist-editable-box[disabled="true"],
+tabpanels .numberbox-input-box[disabled="true"] {
+  -moz-appearance: none !important;
+  border: 1px solid rgba(0,0,0,0.21) !important;
+  background:  #1a1a1b !important;
+  background-image: none!important;
+  box-shadow: none !important;
+  color: rgba(170,170,171,0.55)!important;	  
+}
+
+.spinbuttons-up {
+  -moz-appearance: none !important;
+  background-image: url("images/arrow-up.gif") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+    background-color: transparent !important;
+}
+
+.spinbuttons-up:not([disabled]):hover,
+.spinbuttons-up:not([disabled]):active:hover {
+  background-image: url("images/arrow-up-hov.gif") !important;
+}
+
+.spinbuttons-up[disabled="true"] {
+  background-image: url("images/arrow-up-dis.gif") !important;
+}
+
+.spinbuttons-down {
+  -moz-appearance: none !important;
+  background-image: url("images/arrow-down.gif") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+    background-color: transparent !important;
+}
+
+.spinbuttons-down:not([disabled]):hover,
+.spinbuttons-down:not([disabled]):active:hover {
+  background-image: url("images/arrow-down-hov.gif") !important;
+}
+
+.spinbuttons-down[disabled="true"] {
+  background-image: url("images/arrow-down-dis.gif") !important;
+}
+
+/***********Tree*********************/
+tree {
+  -moz-appearance: none !important;
+  color: #aaaaab !important;
+  background-color: alpha(#141416,0.9) !important;
+  }
+  
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text,
+tree[seltype="text"] > treechildren::-moz-tree-cell-text,
+treechildren::-moz-tree-cell-text {
+  color: #aaaaab !important;
+}  
+
+treechildren::-moz-tree-cell-text(hover) {
+  color: #dddddf !important;
+}
+
+treechildren::-moz-tree-cell-text(selected) {
+  color: #000000 !important;
+}
+
+treechildren::-moz-tree-cell-text(active) {
+  color: #000000 !important;
+}
+
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected) ,
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected) {
+  color: #000000!important;
+}
+
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus),
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected, focus),
+treechildren::-moz-tree-cell-text(selected, focus),
+treechildren::-moz-tree-cell-text(hover, selected, focus) {
+  color: #000000 !important;
+}
+/*****/
+tree[seltype="cell"] > treechildren::-moz-tree-line,
+tree[seltype="text"] > treechildren::-moz-tree-line,
+treechildren::-moz-tree-line {
+  border: 1px dotted #aaaaab !important; 
+}
+
+tree[seltype="cell"] > treechildren::-moz-tree-line(active, selected, focus),
+treechildren::-moz-tree-line(selected, focus) {
+  border: 1px dotted #000000 !important;
+}
+
+/****************************   Headers  *****************************/
+/* Headers  */
+dialogheader {
+    border: 1px solid rgba(0,0,0,0.65) !important;
+    opacity: .2px !important;
+}
+
+.dialogheader-title {
+  color: #cccccf !important;
+  font-weight: bold !important;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.62) !important;
+}
+
+caption {
+  color:  rgba(170,170,171,0.55) !important;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.46) !important; 
+  } 
+  
+notification {
+  background:  #ffffff;
+  
+  }
+
+/**********************************Tooltips*****************************/
+tooltip {
+-moz-appearance: none !important;
+border: 0px solid rgba(255, 255, 255, 0.1)!important;
+border-radius: 2px !important;
+box-shadow: none!important;
+background-color: rgba(0, 0, 0, 0.8) !important;
+background-image: none!important;
+}
+
+tooltiptext {
+color: #ffffff !important;
+-moz-appearance: none !important;
+}
+
+tooltip label,
+.tooltip-label {
+	margin: 0px !important;
+	padding: 0 2px 0 2px!important;
+	color: #ffffff!important;
+	font-weight: bold!important;
+	font-size: .905em !important;
+    text-shadow: 0 1px rgba(0,0,0,0.745)!important;
+}
+
+/********************************Dialog Windows************************/
+dialog,
+wizard,
+prefwindow,
+#clientBox,
+/*#placesView,
+menubar,*/
+windowdragbox {
+  -moz-appearance: none!important;
+  background-color: #0f0f10 !important;
+  }
+
+
+/*********************&&&&&&&**************************/
+/* Tabstrip */
+
+#tabbrowser-tabs {
+  -moz-appearance: none !important;
+  background: #0f0f10 !important;
+  height: 28px !important;
+  border-radius: 0px !important;
+  border-width: 1px 0 0 0 !important;
+  border-style: solid !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  color: #858585 !important;
+  border-color: #0a0a0c!important;
+  border-top-color: #141417 !important;
+  box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.2)inset !important;
+  border-bottom: 0px !important;
+}
+
+/* image preloading hack */
+#tabbrowser-tabs::before {
+  background-image:none !important;
+}
+
+.tab-background,
+.tabs-newtab-button {
+  /* overlap the tab curves */
+  -moz-appearance: none !important;
+  -moz-margin-end: -1px!important;
+  -moz-margin-start: -1px!important;
+  border-width: 0 !important;
+}
+
+.tabs-newtab-button {
+  width: 36px !important;
+}
+
+.tab-background-start[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl)::after,
+.tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl)::after,
+.tab-background-middle[selected=true] {
+  -moz-appearance: none !important;
+  background-clip: padding-box, padding-box, content-box;
+  background-color: rgba(0,0,0,0.9) !important;
+  background-image: none !important;
+  background-repeat: repeat-x;
+  background-size: auto;
+  /* The padding-top combined with background-clip: content-box (the bottom-most) ensure the
+     background-color doesn't extend above the top border. */
+  padding-top: 2px;
+  
+  border-radius: 2px 2px 0 0 !important;
+    border-width: 0px 1px 3px 1px !important;
+    border-style: solid !important;
+    border-color: #1c1c1f !important;
+    border-bottom-color: rgba(0,0,0,0.9) !important;
+    border-left: 1px solid rgba(0,0,0,0.9) !important;
+    border-right: 1px solid rgba(0,0,0,0.9) !important;
+    box-shadow: inset 0 -2px #acb7c2,
+    inset 0 -3px rgba(255,255,255, 0.04)
+    !important;
+}
+
+.tab-background-middle[selected=true],
+.tabbrowser-tab[selected="true"] {
+  color: #dddddf !important;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0,0,0,.758) !important;
+  moz-transition: .40s ease-in !important;
+}
+
+.tab-background-middle[selected=true]:hover,
+.tabbrowser-tab[selected="true"]:hover {
+  color: #dddddf !important;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0,0,0,.768) !important;
+}
+
+.tab-background-start[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl)::after {
+	border-radius: 2px 0px 0 0 !important;
+    border-width: 0px 0px 3px 1px !important;
+    border-style: solid !important;
+    border-color: rgba(0,0,0,0.9) !important;
+    border-bottom-color: rgba(0,0,0,0.9) !important;
+}
+
+.tab-background-end[selected=true]:-moz-locale-dir(ltr):not(:-moz-lwtheme)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl):not(:-moz-lwtheme)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl)::after {
+	border-radius: 0px 2px 0 0 !important;
+    border-width: 0px 1px 3px 0px !important;
+    border-style: solid !important;
+    border-color: rgba(0,0,0,0.9) !important;
+    border-bottom-color: rgba(0,0,0,0.9) !important;
+}
+
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
+.tabs-newtab-button:hover {
+  -moz-appearance: none !important;
+  background-image: none !important;
+  background-color: rgba(52, 52, 53, 0.2) !important;
+  border-left: 1px solid rgba(37, 37, 38, 0.3) !important;
+    border-right: 1px solid rgba(37, 37, 38, 0.3) !important;
+	border-radius: 0;
+	box-shadow: inset 0 2px 0 #242424 !important;
+	    border-bottom-width: 2px solid rgba(37, 37, 38, 0.3) !important;
+	    border-top-width: 0px;
+	    /*box-shadow: 0px 2px 3px  rgba(0,0,0,0.3)inset,
+	    inset 0 -5px 0 #242424 !important;*/
+	box-shadow: none
+    !important;
+    color: alpha(#aaaaab,0.65) !important;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.36) !important;
+}
+
+.tabbrowser-tab:hover,
+.tabs-newtab-button:hover {
+  color: alpha(#aaaaab,0.65) !important;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.36) !important;
+}
+
+.tabbrowser-tab[pinned]:hover > .tab-stack > .tab-background:not([selected=true]) {
+  -moz-appearance: none !important;
+  background-image: none !important;
+  background-color: rgba(52, 52, 53, 0.2) !important;
+  border-left: 0px solid rgba(37, 37, 38, 0.3) !important;
+    border-right: 0px solid rgba(37, 37, 38, 0.3)!important;
+	border-radius: 0;
+	/*box-shadow: 0px 2px 3px  rgba(0,0,0,0.3)inset,
+	    inset 0 -5px 0 #242424 !important;*/
+	box-shadow: none
+    !important;
+}
+
+.tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
+  -moz-appearance: none !important;
+  background-image: none !important;
+  background-size: auto !important;
+}
+
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
+.tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
+  -moz-appearance: none !important;
+  -moz-margin-start: 0px !important;
+  -moz-margin-end: 0px !important;
+  background-image: none !important;
+  content: "";
+  display: -moz-box;
+  width: 0 !important;
+}
+
+/* Menus */
+
+popup,
+menupopup{
+  padding: 3px!important;
+} 
+panel{
+  padding: 0px!important;
+}
+panel[type="arrow"]{
+  -moz-appearance: none!important;
+  background: transparent!important;
+  border: none!important;
+  transition: opacity 300ms!important;
+}
+
+panel[type="arrow"][side="top"],
+panel[type="arrow"][side="bottom"] {
+  margin-left: -20px!important;
+  margin-right: -20px!important;
+}
+
+panel[type="arrow"][side="left"],
+panel[type="arrow"][side="right"] {
+  margin-top: -20px!important;
+  margin-bottom: -20px!important;
+}
+
+.panel-arrowcontent{
+/* edited by FT DeepDark's author */
+  border-radius: 3px!important;
+  padding: 10px!important;
+  color: #aaaaab !important;
+  background: #0f0f10!important;
+  background-clip: padding-box!important;
+  border: 2px solid rgba(172,183,194,0.65)!important;
+  margin: 3px 4px 4px 4px!important;
+}
+
+.panel-subviews {
+  background-color: #121214!important;
+  border-bottom-right-radius: 3.5px;
+  padding: 0;
+}
+
+#login-fill-details {
+  padding: 4px;
+  background-color: #121214!important;
+  color: #aaaaab!important;
+  background-clip: padding-box;
+  border-left: 1px solid hsla(210,4%,10%,.3);
+  box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
+              0 0 7px hsla(210,4%,10%,.1);
+  -moz-margin-start: 38px;
+}
+
+.panel-arrow[side="top"],
+.panel-arrow[side="bottom"] {
+  list-style-image: url("images/panelarrow-vertical.png")!important;
+  position: relative!important;
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
+
+.panel-arrow[side="top"] {
+  margin-bottom: -5px!important;
+}
+
+.panel-arrow[side="bottom"] {
+  transform: scaleY(-1)!important;
+  margin-top: -7px!important;
+}
+
+.panel-arrow[side="left"],
+.panel-arrow[side="right"] {
+  list-style-image: url("images/panelarrow-horizontal.png")!important;
+  position: relative!important;
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
+}
+
+.panel-arrow[side="left"] {
+  margin-right: -5px!important;
+}
+
+.panel-arrow[side="right"] {
+  transform: scaleX(-1)!important;
+  margin-left: -5px!important;
+}
+
+
+/* ::::: menu/menuitems in menubar ::::: */
+
+menu,
+menuitem,
+.splitmenu-menuitem {
+  -moz-appearance: none !important;
+  -moz-box-align: center;
+  color: #aaaaab;
+  height: 20px;
+  font: menu;
+  list-style-image: none;
+  -moz-image-region: auto;
+  border: 0px none rgba(0,0,0,0);
+}
+
+menu {
+  background: none !important;
+} 
+
+menuitem {
+  background: none!important;
+  color: #aaaaab !important;
+} 
+
+menu:hover,
+menu:focus,
+menu[open="true"],
+menuitem:hover{
+  color: black !important;
+  background: #acb7c2 !important;
+  border: 0px none rgba(0,0,0,0) !important;
+  box-shadow: none!important;
+  transition: color .1s ease-in;
+  text-shadow: 0 -1px 2px alpha(white, 0.35)!important;
+} 
+
+menu[open="true"],
+menuitem:hover{
+  color: black !important;
+  background: #acb7c2!important;
+  border: 0px none rgba(0,0,0,0) !important;
+  box-shadow: none!important;
+  transition: color .1s ease-in;
+  text-shadow:none !important;
+} 
+
+menuitem[default="true"] {
+  font-weight: bold;
+}
+
+menu[disabled="true"],
+menuitem[disabled="true"],
+.splitmenu-menuitem[disabled="true"],
+menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"],
+.splitmenu-menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: #3c3c3c!important;
+  text-shadow: none;
+}
+
+menu[disabled="true"]:hover,
+menuitem[disabled="true"]:hover,
+.splitmenu-menuitem[disabled="true"]:hover,
+menu[_moz-menuactive="true"][disabled="true"]:hover,
+menuitem[_moz-menuactive="true"][disabled="true"]:hover,
+.splitmenu-menuitem[_moz-menuactive="true"][disabled="true"]:hover {
+  color: #3c3c3c !important;
+  text-shadow: none;
+  background: transparent!important;
+}   
+
+#back-button > menupopup {
+-moz-appearance: none !important;
+  margin-top: -1px !important;
+  background: #283036 !important;
+}
+
+#forward-button > menupopup {
+-moz-appearance: none !important;
+  margin-top: 1px !important;
+  background: #2C353C !important;
+}
+
+  .menu-accel,
+  .menu-iconic-accel {
+    color: #6d6d6f!important;
+  }
+
+popup,
+menupopup,
+panel{
+  -moz-appearance: none !important;
+  border: 1px solid #0d0d0f !important;
+  min-width: 1px;
+  background-color: #080809 !important;
+}
+
+menupopup > menu,
+menupopup > menuitem {
+  max-width: 42em!important;
+}
+
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"],
+.splitmenu-menuitem[_moz-menuactive="true"] {
+  background: #acb7c2!important;
+  color: rgb(8,8,8)!important;
+  box-shadow: none !important;
+  transition: color .1s ease-in!important;
+}
+
+/*************************** Window Controls *******************************/
+#close-button, #restore-button, #minimize-button {
+  -moz-appearance: none !important;
+  padding: 7px 6px 5px 6px !important;
+}
+
+#close-button { list-style-image: url("images/close.svg") !important; }
+#close-button:hover { list-style-image: url("images/close-hover.svg") !important; }
+#close-button:active { list-style-image: url("images/close-active.svg") !important; }
+
+#restore-button { list-style-image: url("images/maximize.svg") !important; }
+#restore-button:hover { list-style-image: url("images/max-hover.svg") !important; }
+#restore-button:active { list-style-image: url("images/max-active.svg") !important; }
+
+#minimize-button { list-style-image: url("images/minimize.svg") !important; }
+#minimize-button:hover { list-style-image: url("images/min-hover.svg") !important; }
+#minimize-button:active { list-style-image: url("images/min-active.svg") !important; }
